@@ -5,18 +5,18 @@ apply plugin: 'java'
 
 compileJava {
     options.encoding ='UTF-8'
-    options.fork = true
-    options.forkOptions.executable = 'C:/JDK8/bin/javac.exe'
-    sourceCompatibility = 1.8
-    targetCompatibility=1.8
+//    options.fork = true
+//    options.forkOptions.executable = 'C:/JDK8/bin/javac'
+//    sourceCompatibility = 1.8
+//    targetCompatibility = 1.8
 }
 
 compileTestJava {
     options.encoding ='UTF-8'
-    options.fork = true
-    options.forkOptions.executable = 'C:/JDK8/bin/javac.exe'
-    sourceCompatibility = 1.8
-    targetCompatibility=1.8
+//    options.fork = true
+//    options.forkOptions.executable = 'C:/JDK8/bin/javac'
+//    sourceCompatibility = 1.8
+//    targetCompatibility = 1.8
 }
 
 sourceSets {
