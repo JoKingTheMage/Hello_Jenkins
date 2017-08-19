@@ -1,0 +1,50 @@
+group 'tw.kingjo'
+version '1.0'
+
+apply plugin: 'java'
+
+compileJava {
+    options.encoding ='UTF-8'
+    options.fork = true
+    options.forkOptions.executable = 'C:/JDK8/bin/javac.exe'
+    sourceCompatibility = 1.8
+    targetCompatibility=1.8
+}
+
+compileTestJava {
+    options.encoding ='UTF-8'
+    options.fork = true
+    options.forkOptions.executable = 'C:/JDK8/bin/javac.exe'
+    sourceCompatibility = 1.8
+    targetCompatibility=1.8
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+        resources {
+            srcDirs = ['src/test/resources']
+        }
+    }
+}	//使用src目錄放置Java程式原始碼
+//預設位置是src/main/java目錄
+
+repositories {
+    mavenLocal()
+    mavenCentral()					//使用maven  central repository
+}
+
+dependencies {						//宣告dependency library
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
