@@ -2,6 +2,8 @@ group 'tw.kingjo'
 version '1.0'
 
 apply plugin: 'java'
+apply plugin: 'jacoco'
+
 
 compileJava {
     options.encoding ='UTF-8'
@@ -17,6 +19,12 @@ compileTestJava {
 //    options.forkOptions.executable = 'C:/JDK8/bin/javac'
 //    sourceCompatibility = 1.8
 //    targetCompatibility = 1.8
+}
+
+jacoco {
+    toolVersion = "0.7.6.201602180812"
+    println("Build位置是$buildDir")
+    reportsDir = file("$buildDir/customJacocoReportDir")
 }
 
 sourceSets {
@@ -42,6 +50,16 @@ sourceSets {
 repositories {
     mavenLocal()
     mavenCentral()					//使用maven  central repository
+}
+
+
+
+jacocoTestReport {
+    reports {
+        xml.destination "${buildDir}/jacocoXml"
+        csv.destination "${buildDir}/jacocoCsv"
+        html.destination "${buildDir}/jacocoHtml"
+    }
 }
 
 dependencies {						//宣告dependency library
