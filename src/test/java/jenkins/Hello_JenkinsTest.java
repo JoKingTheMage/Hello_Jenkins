@@ -28,4 +28,9 @@ public class Hello_JenkinsTest {
         assertTrue(true);
     }
 
+    @Test
+    public void testMain() {
+        Hello_Jenkins.main(new String[0]);
+    }
+
 }
